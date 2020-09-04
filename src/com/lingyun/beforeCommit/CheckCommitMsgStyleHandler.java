@@ -89,7 +89,7 @@ public class CheckCommitMsgStyleHandler extends CheckinHandler {
     private boolean cheackCommitMessageSytle(String commitMessage) {
 
         List<TypeAlias> typeAliases = settings.getDateSettings().getTypeAliases();
-        if (CollectionUtils.isNotEmpty(typeAliases)) {
+        if (CollectionUtils.isEmpty(typeAliases)) {
             return true;
         }
 
