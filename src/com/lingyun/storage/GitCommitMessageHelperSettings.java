@@ -12,6 +12,10 @@ import com.lingyun.model.TypeAlias;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -48,7 +52,7 @@ public class GitCommitMessageHelperSettings implements PersistentStateComponent<
         try {
             dataSettings.setTemplate(GitCommitConstants.DEFAULT_TEMPLATE);
             List<TypeAlias> typeAliases = new LinkedList<>();
-            typeAliases.add(new TypeAlias("feature", "A new feature"));
+            typeAliases.add(new TypeAlias("feature", "xxx"));
             typeAliases.add(new TypeAlias("fix", "A bug fix"));
             typeAliases.add(new TypeAlias("docs", "Documentation only changes"));
             typeAliases.add(new TypeAlias("style", "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"));
@@ -91,8 +95,36 @@ public class GitCommitMessageHelperSettings implements PersistentStateComponent<
 
     @Override
     public GitCommitMessageHelperSettings clone() {
-        // 这里要导包,暂时先这么处理,运行时在看会不会报错
-        return this;
+
+        // 这里如此编写,是不想使用Gradle 进行导入 DeepClone 依赖包
+        DataSettings dataSettings = new DataSettings();
+        dataSettings.setTemplate(this.dataSettings.getTemplate());
+        dataSettings.setTypeAliases(deepCopy(this.dataSettings.getTypeAliases()));
+
+        GitCommitMessageHelperSettings settings = new GitCommitMessageHelperSettings();
+        settings.setDateSettings(dataSettings);
+
+        return settings;
+    }
+
+    private List<TypeAlias> deepCopy(List<TypeAlias> src) {
+
+        List<TypeAlias> dest;
+        try {
+            ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
+            ObjectOutputStream out = new ObjectOutputStream(byteOut);
+            out.writeObject(src);
+
+            ByteArrayInputStream byteIn = new ByteArrayInputStream(byteOut.toByteArray());
+            ObjectInputStream in = new ObjectInputStream(byteIn);
+
+            dest = (List<TypeAlias>) in.readObject();
+        } catch (Exception e) {
+            log.warn("GitCommitMessageHelperSettings Serialization error");
+            dest = src;
+        }
+
+        return dest;
     }
 
 }

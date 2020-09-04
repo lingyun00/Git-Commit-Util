@@ -59,7 +59,7 @@
     </change-notes>
 
     <!-- IDEA 依赖版本-->
-    <idea-version since-build="173.0"/>
+    <idea-version since-build="171"/>
     <!-- IDEA 依赖模块-->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.vcs</depends>
