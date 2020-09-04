@@ -10,16 +10,12 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 
 /**
- * 这个类Settings 中的属性被创建的时候
- *
- * @author: fulin
+ * 这个类 Settings 中的属性被创建的时候
  */
 public class TemplateEditPaneConfigurable implements SearchableConfigurable {
 
     private TemplateEditPane templateEditPane;
-
     private GitCommitMessageHelperSettings settings;
-
 
     public TemplateEditPaneConfigurable() {
         settings = ServiceManager.getService(GitCommitMessageHelperSettings.class);
@@ -28,9 +24,8 @@ public class TemplateEditPaneConfigurable implements SearchableConfigurable {
     @NotNull
     @Override
     public String getId() {
-        return "plugins.gitcommitmessagehelper";
+        return "plugins.gitcommitutil";
     }
-
 
     @Nullable
     @Override
@@ -41,19 +36,17 @@ public class TemplateEditPaneConfigurable implements SearchableConfigurable {
         return templateEditPane.getMainPenel();
     }
 
-
     @Nullable
     @Override
     public String getHelpTopic() {
-        return "help.gitcommitmessagehelper.configuration";
+        return "help.gitcommitutil.configuration";
     }
 
     @Nls(capitalization = Nls.Capitalization.Title)
     @Override
     public String getDisplayName() {
-        return "GitCommitMessageHelper";
+        return "GitCommitUtil";
     }
-
 
     public void reset() {
         if (templateEditPane != null) {
@@ -65,7 +58,6 @@ public class TemplateEditPaneConfigurable implements SearchableConfigurable {
     public boolean isModified() {
         return templateEditPane != null && templateEditPane.isSettingsModified(settings);
     }
-
 
     @Override
     public void apply() {
