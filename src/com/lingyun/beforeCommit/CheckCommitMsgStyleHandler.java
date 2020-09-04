@@ -79,7 +79,7 @@ public class CheckCommitMsgStyleHandler extends CheckinHandler {
             if (cheackCommitMessageSytle(myCheckinPanel.getCommitMessage())) {
                 return ReturnResult.COMMIT;
             } else {
-                // 取消提交,并弹出错误提示 框
+                // 取消提交,并弹出错误提示框
                 Messages.showErrorDialog("Commit message Not contain Template", CHECK_RESULT_TIP);
                 return ReturnResult.CANCEL;
             }
