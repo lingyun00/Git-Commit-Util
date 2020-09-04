@@ -1,8 +1,8 @@
 <idea-plugin>
-    <id>Git-Commit-Util-idea-plugin</id>
-    <name>Git-Commit-Util</name>
+    <id>Git Commit Util</id>
+    <name>Git Commit Util</name>
     <version>1.0</version>
-    <vendor email="d17600300099@gmail.com" url="https://github.com/lingyun00">Ziroom</vendor>
+    <vendor email="d17600300099@gmail.com" url="https://github.com/lingyun00">自如科技有限公司</vendor>
 
     <!-- IDEA plugin 描述-->
     <description><![CDATA[
