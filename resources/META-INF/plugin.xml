@@ -68,6 +68,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.lingyun.storage.GitCommitMessageHelperSettings"/>
         <applicationConfigurable instance="com.lingyun.setting.ui.TemplateEditPaneConfigurable"/>
+        <checkinHandlerFactory implementation="com.lingyun.beforeCommit.CheckCommitMsgStyleFactory" order="first"/>
     </extensions>
 
     <!-- 操作 -->
