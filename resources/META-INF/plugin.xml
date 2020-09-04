@@ -66,13 +66,13 @@
 
     <!-- 扩展 -->
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.fulinlin.storage.GitCommitMessageHelperSettings"/>
-        <applicationConfigurable instance="com.fulinlin.setting.ui.TemplateEditPaneConfigurable"/>
+        <applicationService serviceImplementation="com.lingyun.storage.GitCommitMessageHelperSettings"/>
+        <applicationConfigurable instance="com.lingyun.setting.ui.TemplateEditPaneConfigurable"/>
     </extensions>
 
     <!-- 操作 -->
     <actions>
-        <action id="Commit.Button" class="com.fulinlin.action.CreateCommitAction"
+        <action id="Commit.Button" class="com.lingyun.action.CreateCommitAction"
                 text="Create Commit Message"
                 description="Create commit message"
                 icon="PluginIcons.ICON">
