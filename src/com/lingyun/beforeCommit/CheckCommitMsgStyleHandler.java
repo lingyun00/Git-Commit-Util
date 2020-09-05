@@ -20,8 +20,8 @@ import java.util.List;
 
 public class CheckCommitMsgStyleHandler extends CheckinHandler {
 
-    private final static String CHECK_GIT_HANDLER_NAME = "Check Style";
-    private final static String CHECK_RESULT_TIP = "Error";
+    private final static String CHECK_GIT_HANDLER_NAME = "检查 Message 模板";
+    private final static String CHECK_RESULT_TIP = "检查模板有误";
 
     private static boolean checkFlag = true;
 
@@ -80,7 +80,7 @@ public class CheckCommitMsgStyleHandler extends CheckinHandler {
                 return ReturnResult.COMMIT;
             } else {
                 // 取消提交,并弹出错误提示框
-                Messages.showErrorDialog("Commit message Not contain Template", CHECK_RESULT_TIP);
+                Messages.showErrorDialog("Git message 不符合模板规范,请仔细检查您的提交信息!", CHECK_RESULT_TIP);
                 return ReturnResult.CANCEL;
             }
         }
