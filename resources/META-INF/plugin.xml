@@ -17,7 +17,7 @@
             <div>
                 <h2>如何使用</h2>
                 <br>
-                <p><img src="https://raw.githubusercontent.com/AutismSuperman/git-commit-message-helper/master/image/operation.gif"
+                <p><img src="https://raw.githubusercontent.com/lingyun00/Git-Commit-Util/master/image/operation.gif"
                         alt="operation">
                 </p>
             </div>
@@ -29,19 +29,19 @@
                 <p> 配置路径: File -> settings->Other Settings-> CitCommitMessageHelper->type</p>
 
                 <p>
-                    <img src="https://raw.githubusercontent.com/AutismSuperman/git-commit-message-helper/master/image/settings-2.png"
+                    <img src="https://raw.githubusercontent.com/lingyun00/Git-Commit-Util/master/image/settings-1.png"
                          alt="settings-2">
                 </p>
                 <p>如果要个性化您的提交模板。可以打开以下位置： </p>
                 <p> 配置路径: File -> settings->Other Settings-> CitCommitMessageHelper->template </p>
 
-                <p><img src="https://raw.githubusercontent.com/AutismSuperman/git-commit-message-helper/master/image/settings-1.png"
+                <p><img src="https://raw.githubusercontent.com/lingyun00/Git-Commit-Util/master/image/settings-2.png"
                         alt="settings-1">
                 </p>
                 <p>如果要关闭git message校验。可以去掉这个勾选项： </p>
                 <p> Commit Changes -> Before Commit -> Check Style </p>
 
-                <p><img src="https://raw.githubusercontent.com/AutismSuperman/git-commit-message-helper/master/image/settings-1.png"
+                <p><img src="https://raw.githubusercontent.com/lingyun00/Git-Commit-Util/master/image/settings-3.png"
                         alt="settings-1">
                 </p>
             </div>
