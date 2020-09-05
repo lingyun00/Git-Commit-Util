@@ -20,8 +20,8 @@ import java.util.List;
 
 public class CheckCommitMsgStyleHandler extends CheckinHandler {
 
-    private final static String CHECK_GIT_HANDLER_NAME = "Check Commit Message Style";
-    private final static String CHECK_RESULT_TIP = "Check Result Tip";
+    private final static String CHECK_GIT_HANDLER_NAME = "Check Style";
+    private final static String CHECK_RESULT_TIP = "Error";
 
     private static boolean checkFlag = true;
 
